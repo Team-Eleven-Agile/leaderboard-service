@@ -54,7 +54,12 @@ class LeaderboardControllerTest {
                 .name("Ana Lameira")
                 .build();
 
-        List<ProfileDto> expectedResponse = List.of(profileDto);
+        ProfileDto profileDtoThree=ProfileDto.builder()
+                .username("astroash")
+                .name("AstroAsh")
+                .build();
+
+        List<ProfileDto> expectedResponse = List.of(profileDto,profileDtoTwo);
         when(leaderboardFacade.getLeaderboardByLanguage("java")).thenReturn(expectedResponse);
 
         mockMvc.perform(get("/v1/leaderboard/java"))
