@@ -41,4 +41,23 @@ class LeaderboardControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(result -> assertThat(result.getResponse().getContentAsString()).isEqualTo(objectMapper.writeValueAsString(expectedResponse)));
     }
+
+    @Test
+    void shouldGetLeaderboardByLanguage() throws Exception{
+        ProfileDto profileDto=ProfileDto.builder()
+                .username("Phinehas")
+                .name("Phinehas Anteh")
+                .build();
+
+        ProfileDto profileDtoTwo=ProfileDto.builder()
+                .username("lameiraatt")
+                .name("Ana Lameira")
+                .build();
+
+        List<ProfileDto> expectedResponse = List.of(profileDto);
+
+
+
+
+    }
 }
