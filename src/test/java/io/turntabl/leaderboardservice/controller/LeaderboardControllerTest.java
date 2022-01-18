@@ -55,6 +55,13 @@ class LeaderboardControllerTest {
                 .build();
 
         List<ProfileDto> expectedResponse = List.of(profileDto);
+        when(leaderboardFacade.getLeaderboardByLanguage("java")).thenReturn(expectedResponse);
+
+        mockMvc.perform(get("/v1/leaderboard/java"))
+                .andExpect(status().isOk())
+                .andExpect(result -> assertThat(result.getResponse().getContentAsString())
+                        .isEqualTo(objectMapper.writeValueAsString(expectedResponse)));
+
 
 
 
