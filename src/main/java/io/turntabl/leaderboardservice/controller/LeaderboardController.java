@@ -1,10 +1,9 @@
 package io.turntabl.leaderboardservice.controller;
 
 import io.turntabl.leaderboardservice.controller.response.ProfileDto;
+import io.turntabl.leaderboardservice.model.Profile;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,12 @@ public class LeaderboardController {
     @GetMapping
     public List<ProfileDto> getLeaderboard() {
         return leaderboardFacade.getLeaderboard();
+
+    }
+
+    @PostMapping
+    public Profile addUser(@RequestBody Profile profile){
+        return leaderboardFacade.addUser(profile);
+
     }
 }
