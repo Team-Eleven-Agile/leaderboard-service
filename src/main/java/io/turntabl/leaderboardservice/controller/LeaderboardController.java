@@ -1,5 +1,6 @@
 package io.turntabl.leaderboardservice.controller;
 
+import io.turntabl.leaderboardservice.controller.request.ProfileRequest;
 import io.turntabl.leaderboardservice.controller.response.ProfileDto;
 import io.turntabl.leaderboardservice.model.Profile;
 import lombok.RequiredArgsConstructor;
@@ -20,9 +21,9 @@ public class LeaderboardController {
 
     }
 
-    @PostMapping
-    public Profile addUser(@RequestBody Profile profile){
-        return leaderboardFacade.addUser(profile);
+    @PostMapping("/addUser")
+    public Profile addUser(@RequestBody ProfileRequest profileRequest){
+        return leaderboardFacade.addUser(profileRequest);
 
     }
 }
