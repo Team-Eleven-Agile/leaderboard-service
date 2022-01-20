@@ -1,21 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="62e5b561-0884-4773-8ad3-9751c9c9db44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/frogs.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/frogs.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GE-19-create_an_API_endpoint_to_view_the_codewars_leaderboard_by_language-phinehas" />
+        <entry key="$PROJECT_DIR$" value="GE-22_Create_an_API_endpoint_to_add_a_new_user_to_the_codewars_leaderboard-Edem" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
   </component>
   <component name="ProjectId" id="23xQRHvJvv16vECSg0m0sipkNk1" />
   <component name="ProjectLevelVcsManager">
@@ -31,6 +65,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -57,6 +92,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

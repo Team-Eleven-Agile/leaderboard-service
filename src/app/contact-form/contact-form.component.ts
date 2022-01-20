@@ -1,21 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component } from '@angular/core';
+import {FormControl} from "@angular/forms";
+import {ApiService} from "../services/api.service";
 
 @Component({
   selector: 'contact-form',
   templateUrl: './contact-form.component.html',
   styleUrls: ['./contact-form.component.scss']
 })
-export class ContactFormComponent implements OnInit {
+export class ContactFormComponent {
 
   username = new FormControl("");
-  constructor(private http:HttpClient) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private api:ApiService) { }
 
   onSubmit(){
-    return this.http.post('http://localhost:8080/v1/leaderboard',{username:this.username.value}).subscribe((response)=>{console.log(response)})
+    this.api.add().subscribe((response)=>{console.log(response)});
   }
 }
