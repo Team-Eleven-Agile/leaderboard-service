@@ -42,4 +42,6 @@ class LeaderboardRepositoryServiceTest {
         assertThat(result).containsExactly(profile1, profile2);
     }
 
+
+
 }

@@ -1,7 +1,11 @@
 package io.turntabl.leaderboardservice.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.turntabl.leaderboardservice.controller.request.ProfileRequest;
 import io.turntabl.leaderboardservice.controller.response.ProfileDto;
+import io.turntabl.leaderboardservice.converter.ProfileRequestToProfileConverter;
+import io.turntabl.leaderboardservice.model.LanguageLevel;
+import io.turntabl.leaderboardservice.model.Profile;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -13,6 +17,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = LeaderboardController.class)
@@ -26,6 +31,12 @@ class LeaderboardControllerTest {
 
     @MockBean
     private LeaderboardFacade leaderboardFacade;
+
+    @MockBean
+    private ProfileRequest profileRequest;
+
+    @MockBean
+    private ProfileRequestToProfileConverter profileRequestToProfileConverter;
 
     @Test
     void shouldGetLeaderboard() throws Exception {
@@ -71,5 +82,27 @@ class LeaderboardControllerTest {
 
 
 
+    void shouldAddUserToLeaderBoard() throws Exception {
+        ProfileDto profileDto = ProfileDto.builder()
+                .username("flexninja21")
+                .name("Edem Afflu")
+                .build();
+
+        Profile profile = new Profile();
+        profile.setId(profileDto.getUsername())
+                .setClan(profileDto.getClan())
+                .setHonour(profileDto.getHonour())
+                .setName(profileDto.getName())
+                .setOverallRank(profileDto.getOverallRank())
+                .setLanguageLevels(List.of(new LanguageLevel().setName("java").setRank(-7)));
+
+        ProfileRequest profileRequest = new ProfileRequest();
+        profileRequest.setUsername("flexninja21");
+
+        when(leaderboardFacade.addUser(profileRequest)).thenReturn(profile);
+
+        mockMvc.perform(post("/v1/leaderboard/addUser").content("flexninja21"))
+                .andExpect(status().isOk())
+                .andExpect(result -> assertThat(result.getResponse().getContentAsString()).isEqualTo(objectMapper.writeValueAsString(profile)));
     }
 }
