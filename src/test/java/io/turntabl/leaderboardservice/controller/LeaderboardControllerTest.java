@@ -17,6 +17,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = LeaderboardController.class)
@@ -57,7 +58,8 @@ class LeaderboardControllerTest {
         ProfileDto profileDto = ProfileDto.builder()
                 .username("flexninja21")
                 .name("Edem Afflu")
-                .build() ;
+                .build();
+
         Profile profile = new Profile();
         profile.setId(profileDto.getUsername())
                 .setClan(profileDto.getClan())
@@ -69,15 +71,10 @@ class LeaderboardControllerTest {
         ProfileRequest profileRequest = new ProfileRequest();
         profileRequest.setUsername("flexninja21");
 
-
         when(leaderboardFacade.addUser(profileRequest)).thenReturn(profile);
 
-        mockMvc.perform(get("/v1/leaderboard/addUser"))
+        mockMvc.perform(post("/v1/leaderboard/addUser").content("flexninja21"))
                 .andExpect(status().isOk())
                 .andExpect(result -> assertThat(result.getResponse().getContentAsString()).isEqualTo(objectMapper.writeValueAsString(profile)));
-
     }
-
-
-
 }

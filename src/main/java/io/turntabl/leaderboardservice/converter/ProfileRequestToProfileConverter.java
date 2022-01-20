@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProfileRequestToProfileConverter implements Converter<ProfileRequest, Profile> {
 
-
     @Override
     public Profile convert(ProfileRequest source) {
         Profile profile = new Profile();
