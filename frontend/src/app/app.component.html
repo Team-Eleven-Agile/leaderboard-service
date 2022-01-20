@@ -1,0 +1,31 @@
+<router-outlet></router-outlet>
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>Username</th>
+    <th>Name</th>
+    <th>Clan</th>
+    <th>Honour</th>
+    <th>Over all Rank</th>
+    <th>Languages</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of data">
+    <td>{{item.username}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.clan}}</td>
+    <td>{{item.honour}}</td>
+    <td>{{item.overall_rank}}</td>
+    <td>
+      <span *ngFor="let language of item.languages">
+        {{language.name}}
+        ({{language.rank}}),
+      </span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<contact-form></contact-form>
+

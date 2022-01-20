@@ -1,0 +1,7 @@
+<form (submit)="onSubmit()">
+  <div class="form-group">
+    <label for="username">Username: </label>
+    <input name="username" id="username" type="text" class="form-control" placeholder="username" [formControl]="username">
+    <button class="btn btn-primary">Add User</button>
+  </div>
+</form>
