@@ -9,6 +9,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@CrossOrigin
 @RequestMapping("v1/leaderboard")
 public class LeaderboardController {
 
@@ -24,5 +25,10 @@ public class LeaderboardController {
     public Profile addUser(@RequestBody Profile profile){
         return leaderboardFacade.addUser(profile);
 
+    }
+
+    @GetMapping("/{language}")
+    public List<ProfileDto> getLeaderboardByLanguage(@PathVariable String language){
+        return leaderboardFacade.getLeaderboardByLanguage(language);
     }
 }

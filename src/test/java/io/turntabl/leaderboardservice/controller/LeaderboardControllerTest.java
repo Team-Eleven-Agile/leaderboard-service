@@ -41,4 +41,35 @@ class LeaderboardControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(result -> assertThat(result.getResponse().getContentAsString()).isEqualTo(objectMapper.writeValueAsString(expectedResponse)));
     }
+
+    @Test
+    void shouldGetLeaderboardByLanguage() throws Exception{
+        ProfileDto profileDto=ProfileDto.builder()
+                .username("Phinehas")
+                .name("Phinehas Anteh")
+                .build();
+
+        ProfileDto profileDtoTwo=ProfileDto.builder()
+                .username("lameiraatt")
+                .name("Ana Lameira")
+                .build();
+
+        ProfileDto profileDtoThree=ProfileDto.builder()
+                .username("astroash")
+                .name("AstroAsh")
+                .build();
+
+        List<ProfileDto> expectedResponse = List.of(profileDto,profileDtoTwo);
+        when(leaderboardFacade.getLeaderboardByLanguage("java")).thenReturn(expectedResponse);
+
+        mockMvc.perform(get("/v1/leaderboard/java"))
+                .andExpect(status().isOk())
+                .andExpect(result -> assertThat(result.getResponse().getContentAsString())
+                        .isEqualTo(objectMapper.writeValueAsString(expectedResponse)));
+
+
+
+
+
+    }
 }
