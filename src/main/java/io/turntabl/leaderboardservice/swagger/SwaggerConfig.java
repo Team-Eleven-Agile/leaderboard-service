@@ -24,7 +24,7 @@ public class SwaggerConfig {
 //                .build()
                 .apis(Predicates
                         .not(RequestHandlerSelectors
-                                .basePackage("or.springframework.boot")))
+                                .basePackage("org.springframework.boot")))
                 .build();
     }
 
