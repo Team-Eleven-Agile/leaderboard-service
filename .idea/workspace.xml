@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62e5b561-0884-4773-8ad3-9751c9c9db44" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/language/language.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/language/language.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/language/language.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/language/language.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contact-form/contact-form.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/services/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/frogs.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/frogs.service.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="GE-22_Create_an_API_endpoint_to_add_a_new_user_to_the_codewars_leaderboard-Edem" />
+        <entry key="$PROJECT_DIR$" value="master-staging" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

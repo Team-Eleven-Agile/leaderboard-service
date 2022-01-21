@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LanguageComponent } from './language/language.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,

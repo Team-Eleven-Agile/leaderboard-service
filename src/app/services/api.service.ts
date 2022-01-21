@@ -7,16 +7,17 @@ import {FormControl} from "@angular/forms";
 })
 export class ApiService {
 
-  username = new FormControl("");
+  constructor(private http:HttpClient) {
 
-  read(){
-    return this.http.get<any>("http://localhost:8080/v1/leaderboard");
   }
 
+  username = new FormControl("");
+
+  read(){return this.http.get<any>("http://localhost:8080/v1/leaderboard");}
   add(){
     return this.http.post('http://localhost:8080/v1/leaderboard/addUser',{username:this.username.value})
   }
-  constructor(private http:HttpClient) {
-
+  language(language:String){
+    return this.http.get(`http://localhost:8080/v1/leaderboard/${language}`);
   }
 }
