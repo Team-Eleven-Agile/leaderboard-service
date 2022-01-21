@@ -21,20 +21,20 @@ public class SwaggerConfig {
     public Docket docket(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-//                .build()
+
                 .apis(Predicates
                         .not(RequestHandlerSelectors
                                 .basePackage("org.springframework.boot")))
                 .build();
     }
 
-    public void  addResourceHandler(ResourceHandlerRegistry registry){
-        registry.addResourceHandler("swagger-ui.html")
-                .addResourceLocations("classpath:/META-INF/resource/");
+//    public void  addResourceHandler(ResourceHandlerRegistry registry){
+//        registry.addResourceHandler("swagger-ui.html")
+//                .addResourceLocations("classpath:/META-INF/resource/");
+//
+//        registry.addResourceHandler("/webjars/**")
+//                .addResourceLocations("classpath:/META-INF/resource/webjars/");
+//    }
 
-        registry.addResourceHandler("/webjars/**")
-                .addResourceLocations("classpath:/META-INF/resource/webjars/");
-
-    }
 
 }
