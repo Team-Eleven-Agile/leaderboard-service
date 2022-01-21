@@ -28,6 +28,7 @@ public class LeaderboardController {
         return leaderboardFacade.addUser(profileRequest);
     }
 
+    @ApiOperation(value = "Filters the leaderboard results by language", response = Iterable.class)
     @GetMapping("/{language}")
     public List<ProfileDto> getLeaderboardByLanguage(@PathVariable String language){
         return leaderboardFacade.getLeaderboardByLanguage(language);
